@@ -53,4 +53,10 @@ class Test_Calculator <Minitest::Test
 		num2 = -0.1
 		assert_equal(-0.4, calculator(num1, operator, num2))
 	end
+	def test_that_can_multiply_numbers
+		num1 = 5
+		operator = "*"
+		num2 = 3
+		assert_equal(15, calculator(num1, operator, num2))
+	end
 end
