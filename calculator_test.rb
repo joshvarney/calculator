@@ -41,4 +41,10 @@ class Test_Calculator <Minitest::Test
 		num2 = -0.0005
 		assert_equal(0, calculator(num1, operator, num2))
 	end
+	def test_that_can_subtract_numbers
+		num1 = 5
+		operator = "-"
+		num2 = 3
+		assert_equal(2, calculator(num1, operator, num2))
+	end
 end
