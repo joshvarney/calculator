@@ -11,10 +11,22 @@ class Test_Calculator <Minitest::Test
 	# 	operator = "+"
 	# 	assert_equal("+", calculator(num1, operator))
 	# end
-	def test_that_can_pass_in_two_numbers_and_operator
+	# def test_that_can_pass_in_two_numbers_and_operator
+	# 	num1 = 2
+	# 	operator = "+"
+	# 	num2 = 3
+	# 	assert_equal(3, calculator(num1, operator, num2))
+	# end
+	def test_that_can_add_two_numbers_together
 		num1 = 2
 		operator = "+"
 		num2 = 3
-		assert_equal(3, calculator(num1, operator, num2))
+		assert_equal(5, calculator(num1, operator, num2))
+	end
+	def test_that_can_add_negative_number_together
+		num1 = -2
+		operator = "+"
+		num2 = -3
+		assert_equal(-5, calculator(num1, operator, num2))
 	end
 end
