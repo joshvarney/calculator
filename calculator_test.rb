@@ -83,4 +83,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 4
 		assert_equal(0.5, calculator(num1, operator, num2))
 	end
+	def test_that_negatives_and_floats_work_division
+		num1 = -0.05
+		operator = "/"
+		num2 = -0.2
+		assert_equal(0.25, calculator(num1, operator, num2))
+	end
 end
