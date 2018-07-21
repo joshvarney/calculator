@@ -29,4 +29,16 @@ class Test_Calculator <Minitest::Test
 		num2 = -3
 		assert_equal(-5, calculator(num1, operator, num2))
 	end
+	def test_that_works_with_floats
+		num1 = 0.05
+		operator = "+"
+		num2 = 1
+		assert_equal(1.05, calculator(num1, operator, num2))
+	end
+	def test_that_works_with_negative_floats
+		num1 = 0.0005
+		operator = "+"
+		num2 = -0.0005
+		assert_equal(0, calculator(num1, operator, num2))
+	end
 end
