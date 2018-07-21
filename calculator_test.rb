@@ -95,4 +95,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 5
 		assert_equal(0, calculator(num1, operator, num2))
 	end
+	def test_that_divison_with_num2_0_works_right
+		num1 = 2
+		operator = "/"
+		num2 = 0
+		assert_equal("Undefined", calculator(num1, operator, num2))
+	end
 end
