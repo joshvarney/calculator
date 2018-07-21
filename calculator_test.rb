@@ -101,4 +101,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 0
 		assert_equal("Undefined", calculator(num1, operator, num2))
 	end
+	def test_that_division_by_zero_works_with_float
+		num1 = 2
+		operator = "/"
+		num2 = 0.00000000
+		assert_equal("Undefined", calculator(num1, operator, num2))
+	end
 end
