@@ -1,4 +1,5 @@
-def calculator(num1, operator)
+def calculator(num1, operator, num2)
 	num1
-	p operator
+	operator
+	num2
 end
