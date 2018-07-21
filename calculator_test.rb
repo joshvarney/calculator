@@ -71,4 +71,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 0.6
 		assert_equal(-0.12, calculator(num1, operator, num2))
 	end
+	def test_that_can_divide
+		num1 = 4
+		operator = "/"
+		num2 = 2
+		assert_equal(2, calculator(num1, operator, num2))
+	end
 end

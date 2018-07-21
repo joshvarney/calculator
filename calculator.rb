@@ -5,7 +5,9 @@ def calculator(num1, operator, num2)
 	when "-"
 		solution = num1 - num2
 	when "*"
-		solution = num1 * num2		
+		solution = num1 * num2
+	when "/"
+		solution = num1 / num2		
 	end
 	solution
 end
