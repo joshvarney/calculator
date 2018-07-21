@@ -65,4 +65,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 0.6
 		assert_equal(0.12, calculator(num1, operator, num2))
 	end
+	def test_that_can_multiply_with_negatives
+		num1 = -0.2
+		operator = "*"
+		num2 = 0.6
+		assert_equal(-0.12, calculator(num1, operator, num2))
+	end
 end
