@@ -77,4 +77,10 @@ class Test_Calculator <Minitest::Test
 		num2 = 2
 		assert_equal(2, calculator(num1, operator, num2))
 	end
+	def test_that_can_divide_with_larger_denominator
+		num1 = 2
+		operator = "/"
+		num2 = 4
+		assert_equal(0.5, calculator(num1, operator, num2))
+	end
 end
