@@ -11,12 +11,12 @@ class Test_Calculator <Minitest::Test
 	# 	operator = "+"
 	# 	assert_equal("+", calculator(num1, operator))
 	# end
-	# def test_that_can_pass_in_two_numbers_and_operator
-	# 	num1 = 2
-	# 	operator = "+"
-	# 	num2 = 3
-	# 	assert_equal(3, calculator(num1, operator, num2))
-	# end
+	def test_that_can_pass_in_two_numbers_and_operator
+		num1 = 2
+		operator = "+"
+		num2 = 3
+		assert_equal(5, calculator(num1, operator, num2))
+	end
 	def test_that_can_add_two_numbers_together
 		num1 = 2
 		operator = "+"
@@ -106,5 +106,23 @@ class Test_Calculator <Minitest::Test
 		operator = "/"
 		num2 = 0.00000000
 		assert_equal("Undefined", calculator(num1, operator, num2))
+	end
+	def test_what_happens_when_letters_are_entered
+		num1 = "m56-="
+		operator = "+"
+		num2 = "12"
+		assert_equal("Incorrect characters try again", calculator(num1, operator, num2))
+	end
+	def test_what_happens_when_minus_signs_entered_in_different_places_1
+		num1 = "-"
+		operator = "-"
+		num2 = "13"
+		assert_equal("Incorrect characters try again", calculator(num1, operator, num2))
+	end
+	def test_what_happens_with_decimal_no_zero
+		num1 = "3"
+		operator = "+"
+		num2 = "2"
+		assert_equal(5, calculator(num1, operator, num2))
 	end
 end
