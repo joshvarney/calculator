@@ -34,7 +34,7 @@ def calculator(num1, operator, num2)
 	elsif num3.count == 1 && num3.include?("-")
 		solution = "Try entering a number after the negative sign!"
 	elsif num3.count > 1 && num3[1..-1].include?("-")
-		solution = "Too many negative signs try again!"
+		solution = "Too many negatives try again!"
 	elsif num4.count == 1 && num4.include?("-")
 		solution = "Try entering a number after the negative sign!"
 	elsif num4.count > 1 && num4[1..-1].include?("-")

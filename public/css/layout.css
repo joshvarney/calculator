@@ -16,7 +16,11 @@
     box-shadow: 0 32px 64px 0 rgba(0,0,0,0.2);
 }
 body {
-	background-image: url("/images/background1.jpeg")
+	background: url("/images/background1.jpeg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 table {
     font-family: arial, sans-serif;

@@ -9,35 +9,27 @@ get '/login' do
 	erb :login_page, locals:{error: ""}
 end
 post '/login' do
+	puts "in post login params is #{params}"
 	first_name = params[:first_name]
 	last_name = params[:last_name]
 	user_name = params[:user_name]
 	password = params[:password]
-	user_name1 = "admin"
-	password1 = "admin"
-	user_name2 = "student"
-	password2 = "minedminds"
-	user_name3 = "guest"
-	password3 = "guest1"
-	if user_name == user_name1 && password == password1 
-	 	redirect '/calculator_page?user_name=' + user_name + '&first_name=' + first_name + '&last_name=' + last_name
-	elsif user_name == user_name2 && password == password2 
-	 	redirect '/calculator_page?user_name=' + user_name + '&first_name=' + first_name + '&last_name=' + last_name
-	elsif user_name == user_name3 && password == password3 
-	 	redirect '/calculator_page?user_name=' + user_name + '&first_name=' + first_name + '&last_name=' + last_name
-	elsif user_name != user_name1 && user_name != user_name2 && user_name != user_name3
-		error = "User Name Incorrect"
-		erb :login_page, locals:{error: "User Name Incorrect"}
-	elsif user_name == user_name1 && password != password1
-		error = "Password Incorrect"
-		erb :login_page, locals:{error: "Password Incorrect"}
-	elsif user_name == user_name2 && password != password2
-		error = "Password Incorrect"
-		erb :login_page, locals:{error: "Password Incorrect"}
-	elsif user_name == user_name3 && password != password3
-		error = "Password Incorrect"
-		erb :login_page, locals:{error: "Password Incorrect"}	
+	user_arr = ["admin", "student", "guest"]
+	pass_arr = ["admin", "minedminds", "guest1"]
+	counter = 0
+	user_arr.each do |name|
+		if name == user_name && password == pass_arr[counter]
+			redirect '/calculator_page?user_name=' + user_name + '&first_name=' + first_name + '&last_name=' + last_name
+		end
+		counter += 1
 	end
+	unless user_arr.include?(user_name)
+		erb :login_page, locals:{error: "User Name Incorrect"}
+	end
+	unless pass_arr.include?(password)
+		erb :login_page, locals:{error: "Password Incorrect"}
+	end
+	erb :login_page, locals:{error: "User Name and Password Incorrect"}
 end
 get '/calculator_page' do
 	first_name = params[:first_name]
